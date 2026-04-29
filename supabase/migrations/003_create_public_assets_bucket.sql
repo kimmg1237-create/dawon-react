@@ -1,0 +1,7 @@
+-- ============================================
+-- Create public-assets bucket
+-- ============================================
+
+INSERT INTO storage.buckets (id, name, public)
+VALUES ('public-assets', 'public-assets', true)
+ON CONFLICT (id) DO NOTHING;
