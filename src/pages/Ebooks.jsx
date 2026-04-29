@@ -53,9 +53,8 @@ export default function Ebooks() {
                   allow="fullscreen"
                   loading="lazy"
                 />
-                <div className="pdf-fallback" style={{ display: 'none' }}>
+                <div className="pdf-fallback">
                   <p>PDF가 표시되지 않으면 <a href={pdfUrl} target="_blank" rel="noreferrer">새 탭에서 열기</a>를 클릭하세요.</p>
-                  <embed src={pdfUrl} type="application/pdf" width="100%" height="600px" />
                 </div>
               </div>
             ) : (
