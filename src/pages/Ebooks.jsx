@@ -44,14 +44,20 @@ export default function Ebooks() {
 
           <div className="viewer-pages">
             {pdfUrl ? (
-              <iframe
-                src={pdfUrl}
-                title={selected.title}
-                className="pdf-embed"
-                type="application/pdf"
-                allow="fullscreen"
-                loading="lazy"
-              />
+              <div className="pdf-container">
+                <iframe
+                  src={pdfUrl}
+                  title={selected.title}
+                  className="pdf-embed"
+                  type="application/pdf"
+                  allow="fullscreen"
+                  loading="lazy"
+                />
+                <div className="pdf-fallback" style={{ display: 'none' }}>
+                  <p>PDF가 표시되지 않으면 <a href={pdfUrl} target="_blank" rel="noreferrer">새 탭에서 열기</a>를 클릭하세요.</p>
+                  <embed src={pdfUrl} type="application/pdf" width="100%" height="600px" />
+                </div>
+              </div>
             ) : (
               <div className="page-loading" style={{ padding: '100px', textAlign: 'center' }}>
                 PDF 파일 URL이 없습니다. 관리자에서 PDF URL을 확인해주세요.
